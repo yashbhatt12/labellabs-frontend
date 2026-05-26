@@ -119,9 +119,9 @@ export default function Register() {
         formData.pincode
       );
 
-      if (response.success && response.token && response.user) {
-        authStorage.setToken(response.token);
-        authStorage.setUser(response.user);
+      if (response.success && response.data && response.data.token && response.data.user) {
+      authStorage.setToken(response.data.token);
+authStorage.setUser(response.data.user);
         router.push('/');
       } else {
         setError(response.message || 'Registration failed. Please try again.');
