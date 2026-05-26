@@ -32,9 +32,9 @@ export default function Login() {
 
       const response = await apiClient.login(email, password);
 
-      if (response.success && response.token && response.user) {
-        authStorage.setToken(response.token);
-        authStorage.setUser(response.user);
+      if (response.success && response.data && response.data.token && response.data.user) {
+        authStorage.setToken(response.data.token);
+        authStorage.setUser(response.data.user);
         router.push('/');
       } else {
         setError(response.message || 'Login failed. Please try again.');
