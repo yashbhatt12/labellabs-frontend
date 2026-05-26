@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Variables */
+:root {
+  --color-primary: #001a80;
+  --color-secondary: #f3f4f6;
+  --color-accent: #ee1111;
+  --color-teal: #00b4a0;
+  --color-coral: #ff6b6b;
+  --color-purple: #6c5ce7;
+  --color-amber: #f59e0b;
+  --color-success: #10b981;
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --transition-normal: 0.3s ease;
+}
+
+/* Typography */
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+  font-feature-settings: "kern" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold tracking-tight;
+  font-family: var(--font-family-sans);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Classes */
+.btn-primary {
+  @apply px-4 py-2 rounded-md bg-brand-navy text-white font-semibold transition-all hover:bg-opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-md bg-gray-200 text-gray-900 font-semibold transition-all hover:bg-gray-300 active:scale-95;
+}
+
+.btn-accent {
+  @apply px-4 py-2 rounded-md bg-brand-red text-white font-semibold transition-all hover:bg-opacity-90 active:scale-95;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-transparent transition-all;
+}
+
+.card {
+  @apply bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all;
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+.badge-teal {
+  @apply bg-teal-100 text-teal-800;
+}
+
+.badge-coral {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-purple {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.badge-amber {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
+
+/* Links */
+a {
+  @apply text-brand-navy hover:underline transition-colors;
+}
+
+/* Focus States */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-navy;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
